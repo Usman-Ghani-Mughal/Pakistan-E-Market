@@ -119,17 +119,17 @@ const Home = () => {
                                 </div>
                                 <div class="media-body">
                                     <h3 class="heading">Free Shipping</h3>
-                                    <span>On order over pkr 100</span>
+                                    <span>On order over pkr 500</span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-3 text-center d-flex align-self-stretch ftco-animate">
                             <div class="media block-6 services mb-md-0 mb-4">
                                 <div class="icon bg-color-2 d-flex justify-content-center align-items-center mb-2">
-                                    <span class="flaticon-diet"></span>
+                                    <span class="ti-package"></span>
                                 </div>
                                 <div class="media-body">
-                                    <h3 class="heading">Always Fresh</h3>
+                                    <h3 class="heading">Always SAVE</h3>
                                     <span>Product well package</span>
                                 </div>
                             </div>
