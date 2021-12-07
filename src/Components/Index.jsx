@@ -24,8 +24,6 @@ import Edit_buyer from "./Edit_buyer";
 import Edit_Seller_profile from "./Edit_Seller_profile";
 const Index = () => {
 
-  
-
     return (
         <>
             <Switch>
@@ -67,14 +65,7 @@ const Index = () => {
                 <Route path="/edit_buyer"><Edit_buyer/></Route>
                 <Route path="/edit_seller"><Edit_Seller_profile/></Route>
 
-
-
                 <Redirect to='/home' />
-
-              
-
-
-
 
             </Switch>
 

@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import Header from './Header';
-
+import swal from 'sweetalert';
 
 const Seller_register=()=>
 {
@@ -22,14 +22,11 @@ const Seller_register=()=>
         setPassword(data.password)
         setEmail(data.email)
         console.log(data.email)
-        
-
        
-
         Submit();
         reset();
     };
-  
+    const [cnic, setCnic] = useState("");
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -51,7 +48,8 @@ const Seller_register=()=>
     const Submit = async (e) => {
 
         const dataArray = new FormData();
-        
+    
+    dataArray.append("cnic", cnic);
     dataArray.append("name", name);
     dataArray.append("email", email);
     dataArray.append("password", password);
@@ -75,11 +73,12 @@ const Seller_register=()=>
     })
     .then((response) => {
         if (response.status == 200) {
+            swal("Pakistan Local E-Market", "Register Successfully", "success");
                 history.push('/seller_login')
              }
     })
     .catch((error) => {
-        alert("Register Again")
+        swal("Pakistan Local E-Market", error.response.data.Error, "error");
        history.push('/seller_register')
     });
         // const response = await fetch('https://e-market-rest-api.herokuapp.com/seller/register/', {
@@ -138,6 +137,17 @@ const Seller_register=()=>
                          <h3>Welcome Back ! <br/>
                              Please Register in now</h3>
                          <form  onSubmit={handleSubmit(onSubmit)} className="row contact_form" action="#" method="post" novalidate="novalidate">
+                                    <div  className="col-md-12 form-group p_star">
+                                    CNIC
+                                        <input type="text" placeholder="12345-1234567-1"  className={`form-control ${errors.name && "invalid"}`}
+                                            {...register("cnic", { required: "CNIC is Required" })}
+                                            onKeyUp={() => {
+                                                trigger("cnic");
+                                            }} onChange={(e) => setCnic(e.target.value)} />{errors.name && (
+                                                <small className="text-danger">{errors.name.message}</small>
+                                            )}
+                                    </div>
+
                                     <div  className="col-md-12 form-group p_star">
                                     Name
                                         <input

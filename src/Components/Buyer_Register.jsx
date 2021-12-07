@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import Header from './Header';
-
+import swal from 'sweetalert';
 
 const Buyer_Register=()=>
 {
@@ -36,9 +36,6 @@ const Buyer_Register=()=>
         setEmail(data.email)
         console.log(data.email)
 
-       
-       
-
         Submit();
         reset();
     };
@@ -62,12 +59,14 @@ const Buyer_Register=()=>
           }
         })
         .then((response) => {
+            
             if (response.status == 200) {
+                    swal("Pakistan Local E-Market", "Register Successfully", "success");
                     history.push('/buyer_login')
                  }
         })
         .catch((error) => {
-            alert("Register Again")
+            swal("Pakistan Local E-Market", error.response.data.Error, "error");
            history.push('/buyer_register')
         });
     
@@ -111,6 +110,7 @@ const Buyer_Register=()=>
                          <h3>Welcome Back ! <br/>
                              Please Register now</h3>
                          <form  onSubmit={handleSubmit(onSubmit)} className="row contact_form"  method="post" novalidate="novalidate">
+                                    
                                     <div  className="col-md-12 form-group p_star">
                                     Name
                                         <input
