@@ -4,7 +4,6 @@ import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import Card_home from './Card_home';
 
-
 const Home = () => {
     const [users, setUser] = useState([]);
     const [products, setproductsarray] = useState([]);
