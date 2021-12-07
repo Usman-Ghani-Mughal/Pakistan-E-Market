@@ -13,7 +13,6 @@ const Home = () => {
         const res = await axios.get('https://e-market-rest-api.herokuapp.com/product/');
         console.warn(res.data.data);
         localStorage.setItem('prodcuts', JSON.stringify(res.data.data.reverse()));
-        localStorage.setItem('prodcuts_length', JSON.stringify(res.data.data.length));
         setproductsarray(res.data.data);
     }
     useEffect(() => {
