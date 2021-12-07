@@ -239,7 +239,8 @@ const Home = () => {
                                                     <div class="product-body">
                                                         <p class="product-category">{new_products[0].type}</p>
                                                         <h3 class="product-name"><a href="#">{new_products[0].name}</a></h3>
-                                                        <h4 class="product-price">pkr {new_products[0].price} <del class="product-old-price">pkr {100000}</del></h4>
+                                                        {/* <h4 class="product-price">pkr {new_products[0].price} <del class="product-old-price">pkr {100000}</del></h4> */}
+                                                        <h4 class="product-price">pkr {new_products[0].price}</h4>
                                                         <div class="product-rating">
                                                             <i class="fa fa-star"></i>
                                                             <i class="fa fa-star"></i>
@@ -265,7 +266,7 @@ const Home = () => {
                                                     <div class="product-body">
                                                         <p class="product-category">{new_products[1].type}</p>
                                                         <h3 class="product-name"><a href="#">{new_products[1].name}</a></h3>
-                                                        <h4 class="product-price">pkr {new_products[1].price} <del class="product-old-price">pkr {new_products[1].price}</del></h4>
+                                                        <h4 class="product-price">pkr {new_products[1].price} </h4>
                                                         <div class="product-rating">
                                                             <i class="fa fa-star"></i>
                                                             <i class="fa fa-star"></i>
@@ -291,7 +292,7 @@ const Home = () => {
                                                     <div class="product-body">
                                                         <p class="product-category">{new_products[2].type}</p>
                                                         <h3 class="product-name"><a href="#">{new_products[2].name}</a></h3>
-                                                        <h4 class="product-price">pkr {new_products[2].price} <del class="product-old-price">pkr {new_products[2].price}</del></h4>
+                                                        <h4 class="product-price">pkr {new_products[2].price} </h4>
                                                         <div class="product-rating">
                                                             <i class="fa fa-star"></i>
                                                             <i class="fa fa-star"></i>
@@ -316,7 +317,7 @@ const Home = () => {
                                                     <div class="product-body">
                                                         <p class="product-category">{new_products[3].type}</p>
                                                         <h3 class="product-name"><a href="#">{new_products[3].name}</a></h3>
-                                                        <h4 class="product-price">pkr {new_products[3].price} <del class="product-old-price">pkr {new_products[3].price}</del></h4>
+                                                        <h4 class="product-price">pkr {new_products[3].price} </h4>
                                                         <div class="product-rating">
                                                             <i class="fa fa-star"></i>
                                                             <i class="fa fa-star"></i>
