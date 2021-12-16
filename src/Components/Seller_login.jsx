@@ -29,7 +29,7 @@ const Seller_login=()=>
 
         
         if (response.status == 200) {
-            console.warn("************************Successful****************");
+            console.warn("**********************Successful*************");
             localStorage.setItem("email", email);
             localStorage.setItem('user',content.user_details.name)
             localStorage.setItem("seller", 'seller');
