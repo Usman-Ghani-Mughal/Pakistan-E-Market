@@ -3,6 +3,7 @@ import { MDBContainer, MDBRow, MDBCol, MDBBtn } from 'mdbreact';
 import { useHistory } from 'react-router-dom';
 import axios from "axios";
 import Header from './Header';
+import swal from 'sweetalert';
 
 const Add_product = () => {
   const history = useHistory();
@@ -41,8 +42,6 @@ console.warn(image_path)
 
 console.warn(dataArray)
   
-
-  
   axios.post("https://e-market-rest-api.herokuapp.com/product/register/", dataArray, {
     headers: {
       "Content-Type": "multipart/form-data"
@@ -51,10 +50,11 @@ console.warn(dataArray)
   .then((response) => {
       if (response.status == 200) {
               history.push('/seller_profile')
+              swal("Pakistan Local E-Market", "Produdct added success!!!", "success");
            }
   })
   .catch((error) => {
-      alert("Add Again")
+    swal("Pakistan Local E-Market", error.response.data.Error, "error");
      history.push('/add_product')
   });
 

@@ -5,6 +5,7 @@ import Header from "./Header";
 import sdata from './sdata';
 import axios from "axios";
 import Edit_product from './Edit_product';
+import swal from 'sweetalert';
 
 
 const Seller_profile = () => {
@@ -14,12 +15,9 @@ const Seller_profile = () => {
       history.push('/edit_seller')
   }
 
-
-
   const deleteep=(id)=>{      
       axios.delete('https://e-market-rest-api.herokuapp.com/seller/?id='+id)
         .then(() => this.setState({ status: 'Delete successful' }));
-
     }
 
     const [users,setUsers]=useState([]);
@@ -37,13 +35,10 @@ const Seller_profile = () => {
       
         const res=await axios.get('https://e-market-rest-api.herokuapp.com/seller/products?id='+sid)
         setUsers(res.data.data);
-       
     
     }
 
     useEffect(()=>{
-      
-
         getData();
     },[]);
     const editt=(id,name,price,type,quantity)=>{
@@ -58,8 +53,17 @@ const Seller_profile = () => {
     }
     
     const deletee=(id)=>{      
-      axios.delete('https://e-market-rest-api.herokuapp.com/product/?id='+id)
-        .then(() => this.setState({ status: 'Delete successful' }));
+      axios.post('https://e-market-rest-api.herokuapp.com/product/deleteproduct/?id='+id)
+      .then((response) => {
+        if (response.status == 200) {
+            swal("Pakistan Local E-Market", "Produdct Deleted!!!", "success");
+            history.push('/seller_profile');    
+             }
+    })
+    .catch((error) => {
+      swal("Pakistan Local E-Market", error.response.data.Error, "error");
+       history.push('/seller_profile');
+    });
 
     }
 
@@ -67,25 +71,22 @@ const Seller_profile = () => {
         <>
         <Header/>
         <br/><br/><br/><br/><br/>
-        <div class="col-md-2">
+        {/* <div class="col-md-2">
                     <br/>
                     <button type="button" onClick={editp} class="btn btn-warning">Edit Profile</button>
                     &nbsp; &nbsp;
                     &nbsp; &nbsp;
                     <button type="button" onClick={deleteep} class="btn btn-danger">Delete Profile</button>
 
-                    </div>
+                    </div> */}
 
         <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel"><b>Products that you are offering</b>
         </h5>
         
-         
     <button onClick={add} class="btn btn-primary"> Create New Product</button>
     <button onClick={order} class="btn btn-primary"> Check Orders</button>
 
-
-    
       </div>
 
 

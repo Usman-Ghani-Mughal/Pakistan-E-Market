@@ -23,12 +23,12 @@ const Seller_login=()=>
         },
             body: JSON.stringify(article)
         });
-        const content = await response.json();
-        console.warn(response)
-        console.warn(content.user_details.id)
-
         
-        if (response.status == 200) {
+        if (response.status == 200) { 
+            const content = await response.json();
+            console.warn(response)
+            console.warn(content.user_details.id)
+
             console.warn("**********************Successful*************");
             localStorage.setItem("email", email);
             localStorage.setItem('user',content.user_details.name)
@@ -39,8 +39,8 @@ const Seller_login=()=>
            
         }
         else {
-            console.warn("************************ERROR****************");
-            swal("Pakistan Local E-Market", error.response.data.Error, "error");
+            console.warn("**********************Error*************");
+            swal("Pakistan Local E-Market", "Invalid username or password", "error");
             setErr("Eror login again")
         } 
        

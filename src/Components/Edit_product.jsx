@@ -3,6 +3,7 @@ import { MDBContainer, MDBRow, MDBCol, MDBBtn } from 'mdbreact';
 import { useHistory } from 'react-router-dom';
 import axios from "axios";
 import Header from './Header';
+import swal from 'sweetalert';
 
 const Edit_product = (props) => {
  
@@ -37,11 +38,12 @@ const dataArray = {seller_id: seller_id, name: name,price:price,quantity:quantit
   })
   .then((response) => {
       if (response.status == 200) {
-              history.push('/seller_profile')
+              history.push('/seller_profile');
+              swal("Pakistan Local E-Market", "Produdct edit done!!!", "success");
            }
   })
   .catch((error) => {
-      alert("Edit Again")
+    swal("Pakistan Local E-Market", error.response.data.Error, "error");
      history.push('/edit_product')
   });
 
