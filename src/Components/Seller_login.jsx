@@ -1,6 +1,7 @@
 import Header from './Header';
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import swal from 'sweetalert';
 
 const Seller_login=()=>
 {
@@ -34,11 +35,11 @@ const Seller_login=()=>
             localStorage.setItem("seller", 'seller');
             localStorage.setItem("seller_id", content.user_details.id);
 
-
-
             history.push('/seller_profile');
+           
         }
         else {
+            swal("Pakistan Local E-Market", error.response.data.Error, "error");
             setErr("Eror login again")
         } 
        
