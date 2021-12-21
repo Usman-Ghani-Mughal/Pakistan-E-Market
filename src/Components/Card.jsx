@@ -16,7 +16,7 @@ const Card = (props) => {
 		{
 			history.push("/buyer_login")
 		}
-		const dataArray = {seller_id:props.seller_id,product_id:props.product_id,buyer_id:parseInt(localStorage.getItem('buyer_id')),quantity:1,amount:parseInt(props.price),order_description:props.description }
+		const dataArray = {seller_id:props.seller_id,product_id:props.product_id,buyer_id:parseInt(localStorage.getItem('buyer_id')),quantity:1,amount:parseInt(props.price),order_description:"default" }
 			console.warn(dataArray)
 		axios.post("https://e-market-rest-api.herokuapp.com/order/place/", dataArray, {
 			headers: {
