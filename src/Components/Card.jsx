@@ -30,8 +30,8 @@ const Card = (props) => {
 				   }
 		  })
 		  .catch((error) => {
-			  swal("Pakistan Local E-Market", error.response.data.Error, "success");
-			 history.push('/add_product')
+			swal("Pakistan Local E-Market", error.response.data.Error, "error");
+			 history.push('/items')
 		  });
 		
 	}
