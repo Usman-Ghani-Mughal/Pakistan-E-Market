@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-ro
 import Header from "./Header";
 import { useHistory } from 'react-router-dom';
 import axios from "axios";
+import swal from 'sweetalert';
 
 const Card = (props) => {
 	const history = useHistory();
@@ -24,17 +25,14 @@ const Card = (props) => {
 		  })
 		  .then((response) => {
 			  if (response.status == 200) {
-				  alert("You have successfully place order")
+				  swal("Pakistan Local E-Market", "You have successfully place order", "success");
 					  history.push('/items')
 				   }
 		  })
 		  .catch((error) => {
-			  alert("Add Again")
+			  swal("Pakistan Local E-Market", error.response.data.Error, "success");
 			 history.push('/add_product')
 		  });
-		
-		
-		
 		
 	}
 
@@ -59,10 +57,10 @@ const Card = (props) => {
     						<div class="bottom-area d-flex px-3">
 	    						<div class="m-auto d-flex">
 	    							<a href="" onClick={place_order} class="add-to-cart d-flex justify-content-center align-items-center text-center">
-	    								<span><i class="ion-ios-menu"></i></span>
+	    								<span><i class="">Buy</i></span>
 	    							</a>
 	    							{/* <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-	    								<span><i class="ion-ios-cart"></i></span>
+	    								<span><i class="ion-ios-cart"></i></span> ion-ios-menu
 	    							</a> */}
 	    							{/* <a href="#" class="heart d-flex justify-content-center align-items-center ">
 	    								<span><i class="ion-ios-heart"></i></span>

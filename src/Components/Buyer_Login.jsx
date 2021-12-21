@@ -1,6 +1,7 @@
 import Header from './Header';
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import swal from 'sweetalert';
 
 const Buyer_Login=()=>
 {
@@ -39,6 +40,8 @@ const Buyer_Login=()=>
             history.push('/home');
         }
         else {
+            console.warn("**********************Error*************");
+            swal("Pakistan Local E-Market", "Invalid username or password", "error");
             setErr("Eror login again")
         } 
        

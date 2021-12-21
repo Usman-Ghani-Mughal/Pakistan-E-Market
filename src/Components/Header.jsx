@@ -35,7 +35,7 @@ const Header = () => {
                                                     <li className="hot"><Link to="#">Latest</Link>
                                                         <ul className="submenu">
                                                             <li><Link to="/items"> Product list</Link></li>
-                                                            <li><Link to="single-product.html"> Product Details</Link></li>
+                                                            {/* <li><Link to="single-product.html"> Product Details</Link></li> */}
                                                         </ul>
                                                     </li>
                                                     <li><Link to="/items">All Products</Link>          </li>
@@ -43,7 +43,7 @@ const Header = () => {
                                                         <ul className="submenu">
                                                             <li><Link to="/about">About</Link></li>
                                                             <li><Link to="/cart">Orders</Link></li>
-                                                            <li><Link to="/checkout">Product Checkout</Link></li>
+                                                            {/* <li><Link to="/checkout">Product Checkout</Link></li> */}
                                                             {
                                                                 localStorage.getItem('buyer') ?
                                                                     <li><Link to="/buyer_profile">Buyer Profile</Link></li> :
@@ -83,7 +83,7 @@ const Header = () => {
                                             {
                                                 localStorage.getItem('user') ?
                                                 
-                                                    <li style={{ fontSize: '18px' }} className="d-none d-lg-block"> <a style={{ color: "#E7AB3C" }} onClick={Logout}><i className="fa fa-sign-out"></i><b> Logout {user}</b></a></li>
+                                                    <li style={{ fontSize: '18px' }} className="d-none d-lg-block"> <a style={{ color: "#E74C3C" }} onClick={Logout}><i className="fa fa-sign-out"></i><b style={{ color: "#3498DB ", cursor: "pointer" }}>  Logout {user}</b></a></li>
                                                     :
 
                                                     <div class="dropdown" style={{ float: "right" }}>

@@ -24,14 +24,14 @@ const Category=()=>
 								</div>
 							</div>
 							<div class="col-md-6">
-								<div class="category-wrap ftco-animate img mb-4 d-flex align-items-end" style={{backgroundImage: "url(/assets/img/category-1.jpg)"}}>
+								<div class="category-wrap ftco-animate img mb-4 d-flex align-items-end" style={{backgroundImage: "url(/assets/img/laptops.jpg)"}}>
 									<div class="text px-3 py-1">
-										<h2 class="mb-0"><a href="#">Fruits</a></h2>
+										<h2 class="mb-0"><a href="#">Laptops</a></h2>
 									</div>
 								</div>
-								<div class="category-wrap ftco-animate img d-flex align-items-end" style={{backgroundImage: "url(/assets/img/category-2.jpg)"}}>
+								<div class="category-wrap ftco-animate img d-flex align-items-end" style={{backgroundImage: "url(/assets/img/fashion.jpg)"}}>
 									<div class="text px-3 py-1">
-										<h2 class="mb-0"><a href="#">Vegetables</a></h2>
+										<h2 class="mb-0"><a href="#">Fashion</a></h2>
 									</div>
 								</div>
 							</div>
@@ -39,14 +39,14 @@ const Category=()=>
 					</div>
 
 					<div class="col-md-4">
-						<div class="category-wrap ftco-animate img mb-4 d-flex align-items-end" style={{backgroundImage: "url(/assets/img/category-3.jpg)"}}>
+						<div class="category-wrap ftco-animate img mb-4 d-flex align-items-end" style={{backgroundImage: "url(/assets/img/asscories.jpg)"}}>
 							<div class="text px-3 py-1">
-								<h2 class="mb-0"><a href="#">Juices</a></h2>
+								<h2 class="mb-0"><a href="#">Accessories</a></h2>
 							</div>		
 						</div>
-						<div class="category-wrap ftco-animate img d-flex align-items-end" style={{backgroundImage: "url(/assets/img/category-4.jpg)"}}>
+						<div class="category-wrap ftco-animate img d-flex align-items-end" style={{backgroundImage: "url(/assets/img/electronics.jpg)"}}>
 							<div class="text px-3 py-1">
-								<h2 class="mb-0"><a href="#">Dried</a></h2>
+								<h2 class="mb-0"><a href="#">Electronics</a></h2>
 							</div>
 						</div>
 					</div>

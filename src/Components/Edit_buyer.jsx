@@ -3,6 +3,7 @@ import { MDBContainer, MDBRow, MDBCol, MDBBtn } from 'mdbreact';
 import { useHistory } from 'react-router-dom';
 import axios from "axios";
 import Header from './Header';
+import swal from 'sweetalert';
 
 const Edit_buyer = (props) => {
  
@@ -20,12 +21,8 @@ const Edit_buyer = (props) => {
 const submit=(event)=>{
   event.preventDefault();
   console.warn('*********************************')
-
-
-const buyer_id=localStorage.getItem('buyer_id')
- 
-  
-const dataArray = {name:name,email:email,password:password,address:address,city:city,phone:phone,gender:gender,buyer_id:buyer_id}
+  const buyer_id=localStorage.getItem('buyer_id')
+  const dataArray = {name:name,email:email,password:password,address:address,city:city,phone:phone,gender:gender,buyer_id:buyer_id}
 
   
   axios.post("https://e-market-rest-api.herokuapp.com/buyer/updateprofile/", dataArray, {
@@ -35,12 +32,14 @@ const dataArray = {name:name,email:email,password:password,address:address,city:
   })
   .then((response) => {
       if (response.status == 200) {
+              swal("Pakistan Local E-Market", "Profile Updated Successfully", "success");
               history.push('/buyer_profile')
            }
   })
   .catch((error) => {
-      alert("Edit Again")
-     history.push('/edit_buyer')
+      
+    swal("Pakistan Local E-Market", error.response.data.Error, "error");
+    history.push('/edit_buyer')
   });
 
 }

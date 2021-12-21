@@ -9,12 +9,12 @@ const About=()=>
     return (
         <>
         <Header/>
-        <div class="hero-wrap hero-bread" style={{backgroundImage: "url('/assets/img/bg_1.jpg')"}}>
+        <div class="hero-wrap hero-bread" style={{backgroundImage: "url('/assets/img/about3.jpg')"}}>
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="/home">Home</a></span> <span>About us</span></p>
-            <h1 class="mb-0 bread">About us</h1>
+          	<p class="breadcrumbs"><span class="mr-2"><a href="/home">About</a></span> <span>us</span></p>
+            <h1 class="mb-0 bread">Pakistan Local E-Market</h1>
           </div>
         </div>
       </div>
@@ -31,7 +31,7 @@ const About=()=>
 					<div class="col-md-7 py-5 wrap-about pb-md-5 ftco-animate">
 	          <div class="heading-section-bold mb-4 mt-md-5">
 	          	<div class="ml-md-0">
-		            <h2 class="mb-4">Welcome to an E ecommerce Store</h2>
+		            <h2 class="mb-4">Pakistan Local E-Market Store</h2>
 	            </div>
 	          </div>
 	          <div class="pb-md-5">

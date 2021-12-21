@@ -6,10 +6,7 @@ import { BrowserRouter as Router, Switch, Route, Link, Redirect, useHistory } fr
 import axios from "axios";
 
 const Cart = () => {
-
-
 	const history = useHistory();
-
 
 	const [users, setUsers] = useState([]);
 	let [total, setTotal] = useState(0);
@@ -22,40 +19,37 @@ const Cart = () => {
 	const sid = localStorage.getItem('buyer_id')
 	async function getData() {
 
-		const res1 = await axios.get('https://e-market-rest-api.herokuapp.com/product')
-
+		// const res1 = await axios.get('https://e-market-rest-api.herokuapp.com/product')
 		const array=[]
 		const res = await axios.get('https://e-market-rest-api.herokuapp.com/buyer/orders?id=' + sid)
 		setUsers(res.data.data);
 		console.warn("***********************************************")
-		console.warn(res.data.data[0].product_id)
 		console.warn(res.data.data)
 
+		// for (var i = 0; i < res.data.data.length; i++) {
+		// 	for (var j = 0; j < res1.data.data.length; j++) {
+
+		// 		if(res.data.data[i].product_id===res1.data.data[j].id)
+		// 		{
+		// 				array.push(res1.data.data[j])
+		// 				total=total+parseInt(res1.data.data[j].price)
+		// 				setTotal(total)
+		// 		}
+
+		// 	}
+		// }
 		for (var i = 0; i < res.data.data.length; i++) {
-			for (var j = 0; j < res1.data.data.length; j++) {
-
-				if(res.data.data[i].product_id===res1.data.data[j].id)
-				{
-						array.push(res1.data.data[j])
-						total=total+parseInt(res1.data.data[j].price)
-						setTotal(total)
-						
-						
-				}
-
-			}
+			array.push(res.data.data[i])
+			total= total + parseInt(res.data.data[i].amount)
+			setTotal(total)
 		}
 		console.warn('******************total**************************')
 		console.warn(total)
 		setUsers(array)
-
-
-
 	}
 
 	useEffect(() => {
-
-
+		// get data
 		getData();
 	}, []);
 	const editt = (id) => {
@@ -72,12 +66,12 @@ const Cart = () => {
 		<>
 <Header/>
 
-			<div class="hero-wrap hero-bread" style={{ backgroundImage: "url('/assets/img//bg_1.jpg')" }}>
+			<div class="hero-wrap hero-bread" style={{ backgroundImage: "url('/assets/img//place_orders.jpg')" }}>
 				<div class="container">
 					<div class="row no-gutters slider-text align-items-center justify-content-center">
 						<div class="col-md-9 ftco-animate text-center">
-							<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Cart</span></p>
-							<h1 class="mb-0 bread">Order Place</h1>
+							<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Your</a></span> <span>Placed</span></p>
+							<h1 class="mb-0 bread">Orders</h1>
 						</div>
 					</div>
 				</div>
@@ -114,7 +108,7 @@ const Cart = () => {
 																<p>{val.description}</p>
 															</td>
 
-															<td class="price">pkr.{val.price}</td>
+															<td class="price">pkr.{val.amount}</td>
 
 															<td class="quantity">
 																<div class="input-group mb-3">
@@ -122,7 +116,7 @@ const Cart = () => {
 																</div>
 															</td>
 
-															<td class="total">{val.price}</td>
+															<td class="total">{val.amount}</td>
 														</tr>
 
 											
@@ -160,7 +154,7 @@ const Cart = () => {
 									<span>{total+180}</span>
 								</p>
 							</div>
-							<p><a href="/checkout" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
+							{/* <p><a href="/checkout" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p> */}
 						</div>
 					</div>
 				</div>
