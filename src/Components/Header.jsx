@@ -38,7 +38,7 @@ const Header = () => {
                                                             {/* <li><Link to="single-product.html"> Product Details</Link></li> */}
                                                         </ul>
                                                     </li>
-                                                    <li><Link to="/items">All Products</Link>          </li>
+                                                    <li><Link to="/items">All Products</Link> </li>
                                                     <li><Link to="#">Pages</Link>
                                                         <ul className="submenu">
                                                             <li><Link to="/about">About</Link></li>

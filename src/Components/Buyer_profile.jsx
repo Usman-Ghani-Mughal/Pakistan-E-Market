@@ -21,7 +21,6 @@ const Buyer_profile=()=>
     const deletee=(id)=>{      
         axios.delete('https://e-market-rest-api.herokuapp.com/product/?id='+id)
           .then(() => this.setState({ status: 'Delete successful' }));
-  
       }
   
     const sid=localStorage.getItem('buyer_id')

@@ -8,27 +8,31 @@ import Header from './Header';
 import sdata from './sdata';
 
 
-const Items=()=>
-{  
+const Items_by_type = (props)=> {  
+
     const [users,setUsers]=useState([]);
 
     async function getData(){
-        
-    const res=await axios.get('https://e-market-rest-api.herokuapp.com/product/')
-    console.warn('************data get************')
-    console.warn(res.data.data.name)
-    
-    setUsers(res.data.data);
-   console.warn('********************************image')
-   console.warn(users)
+    const type = props.type;
+    console.log("------------ > "+ type);
+    console.log('https://e-market-rest-api.herokuapp.com/product/type?type='+type);
 
+    axios.get('https://e-market-rest-api.herokuapp.com/product/type?type='+type)
+      .then((response) => {
+        if (response.status == 200) {
+                console.log(response.data.data);
+                 setUsers(response.data.data);
+             }
+    })
+    .catch((error) => {
+      swal("Pakistan Local E-Market",error.response.data.Error, "error");
+    });
+        
 }
     useEffect(()=>{
         // get data
         getData();
     },[]); 
-     
-    console.warn(users)
 
     return (
     <>
@@ -37,8 +41,8 @@ const Items=()=>
     	<div class="container">
 				<div class="row justify-content-center mb-3 pb-3">
           <div class="col-md-12 heading-section text-center ftco-animate">
-            <h2 class="mb-4">Our Products</h2>
-            <p>You can see all products here, to buy them just click on buy</p>
+            <h2 class="mb-4">{props.type}</h2>
+            <p>You can see {props.type} here, to buy them just click on buy</p>
           </div>
         </div>   		
     	</div>
@@ -72,4 +76,4 @@ const Items=()=>
     </>)
 }
 
-export default Items;
+export default Items_by_type;

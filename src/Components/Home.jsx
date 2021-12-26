@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import Card_home from './Card_home';
 
-const Home = () => {
+const  Home = () => {
     const [users, setUser] = useState([]);
     const [products, setproductsarray] = useState([]);
 
@@ -212,9 +212,9 @@ const Home = () => {
                                     <div class="section-nav">
                                         <ul class="section-tab-nav tab-nav">
                                             <li class="active"><a data-toggle="tab" href="#tab1">Laptops</a></li>
-                                            <li><a data-toggle="tab" href="#tab1">Smartphones</a></li>
-                                            <li><a data-toggle="tab" href="#tab1">Cameras</a></li>
                                             <li><a data-toggle="tab" href="#tab1">Accessories</a></li>
+                                            <li><a data-toggle="tab" href="#tab1">Fashion</a></li>
+                                            <li><a data-toggle="tab" href="#tab1">Electronics</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -226,7 +226,6 @@ const Home = () => {
                                         <div id="tab1" class="tab-pane active">
                                             <div class="products-slick" data-nav="#slick-nav-1">
                                                 
-    
                                                 <div class="product">
                                                     <div class="product-img">
                                                         <img src={new_products[0].image_path} alt="" />

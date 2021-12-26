@@ -22,6 +22,7 @@ import Protected from "./Procteted";
 import Seller_orders from "./Seller_orders";
 import Edit_buyer from "./Edit_buyer";
 import Edit_Seller_profile from "./Edit_Seller_profile";
+import Items_by_type from "./items_by_type";
 const Index = () => {
 
     return (
@@ -31,6 +32,13 @@ const Index = () => {
                 <Route exact path='/home'>
                     <Protected component={Home} />
                 </Route>
+
+                <Route exact path="/laptops"><Items_by_type type={"Laptop"}/></Route>
+                <Route exact path="/accessories"><Items_by_type type={"Accessories"}/></Route>
+                <Route exact path="/fashion"><Items_by_type type={"Fashion"}/></Route>
+                <Route exact path="/electronics"><Items_by_type type={"Electronics"}/></Route>
+                <Route exact path="/vegetables"><Items_by_type type={"Vegetables"}/></Route>
+
                 <Route path="/buyer_login"><Buyer_Login /></Route>
                 <Route path="/buyer_register"><Buyer_Register /></Route>
                 <Route path="/seller_login"><Seller_login /></Route>
