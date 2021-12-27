@@ -125,8 +125,7 @@ const Seller_register=()=>
                  <div className="login_part_text text-center">
                      <div className="login_part_text_iner">
                          <h2>Already have an account?</h2>
-                         <p>There are advances being made in science and technology
-                             everyday, and a good example of this is the</p>
+                         <p>Login if you already have an account</p>
                          <a href="/seller_login" className="btn_3">Login</a>
                      </div>
                  </div>
