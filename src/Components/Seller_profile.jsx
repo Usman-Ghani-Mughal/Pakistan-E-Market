@@ -103,13 +103,14 @@ const Seller_profile = () => {
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
+            <th>Product ID</th>
+            <th>Seller ID</th>
             <th>Name</th>
-            <th>id</th>
             <th>Type</th>
             <th>Price</th>
             <th>Quantity</th>
-            <th>Seller ID</th>
-            <th>Image Path</th>
+            
+            {/* <th>Image Path</th> */}
             
             <th>EDIT </th>
             <th>DELETE </th>
@@ -122,14 +123,14 @@ const Seller_profile = () => {
     return  (
         <>
             <tr>
-    
-                <td>{val.name}</td>
                 <td>{val.id} </td>
+                <td>{sid}   </td>
+                <td>{val.name}</td>
                 <td>{val.type} </td>
                 <td>{val.price} </td>
                 <td>{val.quantity}   </td>
-                <td>{sid}   </td>
-                <td>{val.image_path} </td>
+                
+                {/* <td>{val.image_path} </td> */}
 
 
                 
