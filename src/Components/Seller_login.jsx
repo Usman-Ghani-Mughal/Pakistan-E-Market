@@ -71,8 +71,7 @@ const Seller_login=()=>
                     <div className="login_part_text text-center">
                         <div className="login_part_text_iner">
                             <h2>New to our Shop?</h2>
-                            <p>There are advances being made in science and technology
-                                everyday, and a good example of this is the</p>
+                            <p>Create Free Account as Seller</p>
                             <a href="/seller_register" className="btn_3">Create an Account</a>
                         </div>
                     </div>

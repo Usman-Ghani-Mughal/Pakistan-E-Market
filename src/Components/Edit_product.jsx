@@ -77,7 +77,7 @@ return (
     <MDBCol md="6">
     
       <form>
-        <p className="h4 text-center mb-4">Add product</p>
+        <p className="h4 text-center mb-4">Edit product</p>
         <label htmlFor="defaultFormRegisterNameEx" className="grey-text">
           Name
         </label>
